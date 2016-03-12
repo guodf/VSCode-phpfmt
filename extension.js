@@ -24,7 +24,7 @@ function activate(context) {
     var format = vscode.languages.registerDocumentFormattingEditProvider('php', {
         provideDocumentFormattingEdits: function(document, fmtOption, token) {
             console.log("format file:" + document.fileName);           
-            var cmd = "php fmt.phar " + document.fileName;          
+            var cmd =`php /home/guodf/workspace/vscode-plugin/php-test/fmt.8.9.0.phar ${document.fileName}`;          
             cp.exec(cmd, function(error, stdout, stderr) {
                 decoder = new StringDecoder('ascii');
                 console.log(`stdout: ${decoder.write(stdout)}`);
