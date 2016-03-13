@@ -1,9 +1,14 @@
 {
 	"name": "vscode-phpfmt",
-	"displayName": "VSCode-phpfmt",
-	"description": "",
+	"displayName": "phpfmt",
+	"description": "base on phpfmt",
 	"version": "0.0.1",
-	"publisher": "phpfmt",
+	"publisher": "guodf",
+    "homepage": "https://github.com/guodf/VSCode-phpfmt",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/guodf/VSCode-phpfmt"
+	},
 	"engines": {
 		"vscode": "^0.10.10"
 	},
@@ -11,19 +16,10 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.sayHello",
         "onLanguage:php"
 	],
 	"main": "./extension",
-	"contributes": {
-		"commands": [{
-			"command": "extension.sayHello",
-			"title": "Hello World"
-		}]
-	},
-	"scripts": {
-		"postinstall": "node ./node_modules/vscode/bin/install"
-	},
+
 	"devDependencies": {
 		"vscode": "^0.11.0"
 	}
