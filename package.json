@@ -2,7 +2,7 @@
 	"name": "vscode-phpfmt",
 	"displayName": "phpfmt",
 	"description": "base on phpfmt",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "guodf",
     "homepage": "https://github.com/guodf/VSCode-phpfmt",
 	"repository": {
