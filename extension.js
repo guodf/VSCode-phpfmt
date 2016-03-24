@@ -7,7 +7,7 @@ var cp = require('child_process');
 // your extension is activated the very first time the command is executed
 
 function format(context, document) {
-    return document.save().then(() => {
+    document.save().then(() => {
         var phpfmt = vscode.workspace.getConfiguration("phpfmt");
 
         var styleArr = phpfmt.get("style", ["psr2"]);
@@ -33,12 +33,11 @@ function format(context, document) {
     });
 }
 function activate(context) {
-
     //save file
     context.subscriptions.push(vscode.commands.registerCommand('workbench.action.files.save', function(args) {
         var editor = vscode.window.activeTextEditor
         if (editor) {
-            return format(context, editor.document);
+            format(context, editor.document);
         }
     }));
     //formar

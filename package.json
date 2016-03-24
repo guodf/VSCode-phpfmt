@@ -2,7 +2,7 @@
     "name": "vscode-phpfmt",
     "displayName": "phpfmt",
     "description": "base on phpfmt",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "guodf",
     "homepage": "https://github.com/guodf/VSCode-phpfmt",
     "repository": {
@@ -14,6 +14,11 @@
     },
     "categories": [
         "Other"
+    ],
+    "keywords": [
+        "php",
+        "phpfmt",
+        "format"
     ],
     "activationEvents": [
         "onLanguage:php"
@@ -33,8 +38,8 @@
                     "type": "array",
                     "default": [
                         "psr2"
-                    ],
-                    "description": "code style"
+                    ],                    
+                    "description": "code style:psr,psr1,psr1-naming,psr2,yoda,cakephp"
                 },
                 "phpfmt.indent_with_space":{
                     "type": "integer",
