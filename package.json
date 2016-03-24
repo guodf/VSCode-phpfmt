@@ -1,26 +1,47 @@
 {
-	"name": "vscode-phpfmt",
-	"displayName": "phpfmt",
-	"description": "base on phpfmt",
-	"version": "0.0.2",
-	"publisher": "guodf",
+    "name": "vscode-phpfmt",
+    "displayName": "phpfmt",
+    "description": "base on phpfmt",
+    "version": "0.0.2",
+    "publisher": "guodf",
     "homepage": "https://github.com/guodf/VSCode-phpfmt",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/guodf/VSCode-phpfmt"
-	},
-	"engines": {
-		"vscode": "^0.10.10"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/guodf/VSCode-phpfmt"
+    },
+    "engines": {
+        "vscode": "^0.10.10"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
         "onLanguage:php"
-	],
-	"main": "./extension",
-
-	"devDependencies": {
-		"vscode": "^0.11.0"
-	}
+    ],
+    "main": "./extension",
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "vscode": "^0.11.0"
+    },
+    "contributes": {
+        "configuration": {
+            "title": "phpfmt configuration options",
+            "properties": {
+                "phpfmt.style": {
+                    "type": "array",
+                    "default": [
+                        "psr2"
+                    ],
+                    "description": "code style"
+                },
+                "phpfmt.indent_with_space":{
+                    "type": "integer",
+                    "default": 4,
+                    "description": "use spaces instead of tabs for indentation. Default 4"
+                }
+            }
+        }
+    }
 }
