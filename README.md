@@ -11,3 +11,6 @@
     "phpfmt.indent_with_space":4
 }
 ```
+
+##格式化代码
+'ctrl+s' or 'alt+shift+f' to formatter code.
