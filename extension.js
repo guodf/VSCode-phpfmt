@@ -23,26 +23,31 @@ function format(context, document) {
 
         var cmd = `php ${context.extensionPath}/fmt.phar ${argArr.join(" ")} ${document.fileName}`;
         console.log(`cmd line:${cmd}`);
-        cp.exec(cmd, function(error, stdout, stderr) {
+
+        cp.exec(cmd, function (error, stdout, stderr) {
             console.log(`stdout: ${stdout}`);
             console.log(`stderr: ${stderr}`);
             if (error !== null) {
                 console.log(`exec error: ${error}`);
             }
+            //打开文件
+            // var uri = vscode.Uri.parse(`file://${document.fileName}`);
+            // vscode.commands.executeCommand('editor.action.showReferences', uri);
         });
     });
 }
 function activate(context) {
-    //save file
-    context.subscriptions.push(vscode.commands.registerCommand('workbench.action.files.save', function(args) {
-        var editor = vscode.window.activeTextEditor
-        if (editor) {
-            format(context, editor.document);
-        }
-    }));
+    // //save file
+    // context.subscriptions.push(vscode.commands.registerCommand('workbench.action.files.save', function (args) {
+    //     var editor = vscode.window.activeTextEditor;
+    //     if (editor) {
+    //         format(context, editor.document);
+    //     }
+    // }));
+
     //formar
     context.subscriptions.push(vscode.languages.registerDocumentFormattingEditProvider('php', {
-        provideDocumentFormattingEdits: function(document, fmtOption, token) {
+        provideDocumentFormattingEdits: function (document, fmtOption, token) {
             format(context, document);
         }
     }));
