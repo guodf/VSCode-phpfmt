@@ -13,4 +13,4 @@
 ```
 
 ##格式化代码
-'ctrl+s' or 'ctrl+shift+i' to formatter code.
+'ctrl+shift+i' to formatter code.
